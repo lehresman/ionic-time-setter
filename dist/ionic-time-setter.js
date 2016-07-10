@@ -1,5 +1,5 @@
 /**
- * Ionic Time Setter v1.0.0, by Luke Ehresman
+ * Ionic Time Setter v1.0.1, by Luke Ehresman
  * MIT License
  * http://github.com/lehresman/ionic-time-setter
  */
@@ -52,9 +52,9 @@
       //
       // Options and defaults
       //
-      $scope.startHour = 8;
-      $scope.startMinute = 0;
-      $scope.startAmpm = 'AM';
+      $scope.startHour = options.startHour || 0;
+      $scope.startMinute = options.startMinute || 0;
+      $scope.startAmpm = (options.startHour >= 12 ? 'PM' : 'AM');
       $scope.title = options.title || "Set a time";
       $scope.cancelText = options.cancelText || "Cancel";
       $scope.cancelClass = options.cancelClass || 'button-clear button-dark';
