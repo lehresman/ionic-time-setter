@@ -1,0 +1,82 @@
+<div class="ionic-time-setter">
+  <style>
+    .ionic-time-setter .label .time {
+      font-size: 32px;
+      font-weight: bold;
+      line-height: 45px;
+    }
+    .ionic-time-setter .row {
+      padding: 0;
+      margin: 0;
+    }
+    .ionic-time-setter .col {
+      padding: 3px;
+      margin: 0;
+    }
+    .ionic-time-setter .button {
+      margin: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .ionic-time-setter .ion-ios-refresh-outline:before {
+      font-size: 32px;
+    }
+    .ionic-time-setter hr {
+      border: 0;
+      border-top: 1px solid #ddd;
+    }
+    .ionic-time-setter .input-focus {
+      text-decoration: underline;
+    }
+    .ionic-time-setter .not-clearing {
+      background-color: #ddd;
+    }
+    .ionic-time-setter .error {
+      color: #c00;
+    }
+  </style>
+  <div class="row year label ">
+    <div class="col col-60 text-right time" style="padding-right:20px"><strong>
+      <span ng-click="setFocus('beforeColon')"
+            ng-class="{
+              'error': input.beforeColonError,
+              'input-focus': input.position=='beforeColon',
+              'not-clearing': input.position=='beforeColon' && !input.clearValue
+            }">{{ input.beforeColon }}</span>:<span
+            ng-click="setFocus('afterColon')"
+            ng-class="{
+              'error': input.afterColonError,
+              'input-focus': input.position=='afterColon',
+              'not-clearing': input.position=='afterColon' && !input.clearValue
+            }">{{ input.afterColon | lpad }}</span>
+    </strong></div>
+    <div class="col col-40" ng-click="">
+      <button class="button button-dark button-outline button-block" ng-click="toggleAmpm()">{{ input.ampm }}</button>
+    </div>
+  </div>
+  <hr>
+  <div class="keypad">
+    <div class="row">
+      <div class="col col-33"><button class="button button-dark button-outline button-block" ng-click="keyPressed('1')">1</button></div>
+      <div class="col col-33"><button class="button button-dark button-outline button-block" ng-click="keyPressed('2')">2</button></div>
+      <div class="col col-33"><button class="button button-dark button-outline button-block" ng-click="keyPressed('3')">3</button></div>
+    </div>
+    <div class="row">
+      <div class="col col-33"><button class="button button-dark button-outline button-block" ng-click="keyPressed('4')">4</button></div>
+      <div class="col col-33"><button class="button button-dark button-outline button-block" ng-click="keyPressed('5')">5</button></div>
+      <div class="col col-33"><button class="button button-dark button-outline button-block" ng-click="keyPressed('6')">6</button></div>
+    </div>
+    <div class="row">
+      <div class="col col-33"><button class="button button-dark button-outline button-block" ng-click="keyPressed('7')">7</button></div>
+      <div class="col col-33"><button class="button button-dark button-outline button-block" ng-click="keyPressed('8')">8</button></div>
+      <div class="col col-33"><button class="button button-dark button-outline button-block" ng-click="keyPressed('9')">9</button></div>
+    </div>
+    <div class="row">
+      <div class="col col-33"><button class="button button-dark button-outline button-block" ng-click="keyPressed(':')">:</button></div>
+      <div class="col col-33"><button class="button button-dark button-outline button-block" ng-click="keyPressed('0')">0</button></div>
+      <div class="col col-33"><button class="button button-dark button-outline button-block" ng-click="reset()">
+        <i class="ion ion-ios-refresh-outline"></i>
+      </button></div>
+    </div>
+  </div>
+</div>

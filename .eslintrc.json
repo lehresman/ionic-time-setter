@@ -1,0 +1,33 @@
+{
+    "env": {
+        "browser": true
+    },
+    "globals": {
+      "_": true,
+      "angular": true,
+      "cordova": true,
+      "google": true,
+      "ionic": true,
+      "moment": true,
+      "pluralize": true,
+      "StatusBar": true,
+      "MockData": true,
+      "CallayEngine": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+        "indent": [ "error", 2, {"SwitchCase": 1} ],
+        "linebreak-style": [ "error", "unix" ],
+        "semi": [ "error", "always" ],
+        "array-bracket-spacing": ["error", "never"],
+        "camelcase": "error",
+        "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+        "comma-spacing": ["error", { "before": false, "after": true }],
+        "comma-style": ["error", "last"],
+        "object-curly-spacing": ["error", "never"],
+        "space-before-blocks": "error",
+        "keyword-spacing": ["error", { "after": true, "before": true }],
+        "no-console": ["error", { "allow": ["log", "trace", "debug", "error"]}],
+        "no-unused-vars": ["error", { "vars": "local", "args": "none" }]
+    }
+}

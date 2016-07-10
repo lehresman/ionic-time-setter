@@ -1,0 +1,51 @@
+<html ng-app="testApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <title>Time Setter Example</title>
+
+    <link href="http://code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+    <script src="http://code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+    <script src="../dist/ionic-time-setter.js"></script>
+
+    <script>
+      angular.module('testApp', ['ionic', 'ionic-time-setter'])
+        .controller('HomeController', function($scope, TimeSetter) {
+          $scope.time = moment();
+
+          $scope.setTime = function() {
+            TimeSetter.show({
+              onSet: function(hour, minute) {
+                console.log(hour, minute);
+                $scope.time.hour(hour);
+                $scope.time.minute(minute);
+              }
+            });
+          }
+
+          $scope.setTime();
+        });
+    </script>
+  </head>
+
+  <body>
+
+
+    <ion-view view-title="Home" ng-controller="HomeController">
+      <ion-header-bar class="bar-positive" title="Time Setter">
+        <h1 class="title">Time Setter</h1>
+      </ion-header-bar>
+      <ion-content class="padding has-header">
+        <p>
+          Current Time: <b style="font-size:16px">{{ time.format('h:mm a') }}</b>
+        </p>
+        <button class="button button-positive" ng-click="setTime()">
+          Set Time
+        </button>
+      </ion-content>
+    </ion-view>
+
+  </body>
+</html>
