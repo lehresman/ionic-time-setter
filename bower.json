@@ -1,20 +1,20 @@
 {
-  "name": "ionic-monthpicker",
-  "description": "Ionic monthpicker",
+  "name": "ionic-time-setter",
+  "description": "Ionic Time Setter",
   "main": "gulpfile.js",
   "authors": [
-    "Petru Isfan"
+    "Luke Ehresman"
   ],
-  "license": "Apache-2.0",
+  "license": "MIT",
   "keywords": [
     "ionic",
-    "month",
+    "time",
+    "setter",
     "picker",
     "calendar",
     "date",
-    "time",
-    "year"
+    "time"
   ],
-  "homepage": "https://github.com/petruisfan/ionic-monthpicker",
+  "homepage": "https://github.com/lehresman/ionic-time-setter",
   "moduleType": []
 }
