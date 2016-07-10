@@ -1,5 +1,5 @@
 /**
- * Ionic Time Setter v1.0.1, by Luke Ehresman
+ * Ionic Time Setter v1.0.2, by Luke Ehresman
  * MIT License
  * http://github.com/lehresman/ionic-time-setter
  */
