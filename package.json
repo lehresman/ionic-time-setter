@@ -1,6 +1,6 @@
 {
   "name": "ionic-time-setter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Ionic Time Setter",
   "main": "gulpfile.js",
   "scripts": {
