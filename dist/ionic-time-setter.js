@@ -64,15 +64,6 @@
       $scope.input = {};
       reset();
 
-      //
-      // What user selects
-      //
-      $scope.selection = {
-        hour: $scope.startHour,
-        minute: $scope.startMinute,
-        ampm: $scope.startAmpm
-      };
-
       $scope.reset = reset;
       $scope.keyPressed = keyPressed;
       $scope.toggleAmpm = toggleAmpm;
@@ -117,9 +108,31 @@
     }
 
     function reset() {
-      $scope.input.beforeColon = parseInt($scope.startHour);
-      $scope.input.afterColon = $filter('lpad')($scope.startMinute);
-      $scope.input.ampm = $scope.startAmpm;
+      //
+      // What user selects
+      //
+      var ampm = 'AM';
+      var hour = $scope.startHour;
+      if (hour == 0) {
+        hour = 12;
+        ampm = 'AM';
+      } else if (hour == 12) {
+        hour = 12;
+        ampm = 'PM';
+      } else if (hour > 12) {
+        hour = hour - 12;
+        ampm = 'PM';
+      }
+
+      $scope.selection = {
+        hour: hour,
+        minute: $scope.startMinute,
+        ampm: ampm
+      };
+
+      $scope.input.beforeColon = parseInt($scope.selection.hour);
+      $scope.input.afterColon = $filter('lpad')($scope.selection.minute);
+      $scope.input.ampm = $scope.selection.ampm;
       $scope.input.position = 'beforeColon';
       $scope.input.clearValue = true;
       $scope.input.beforeColonError = false;

@@ -17,6 +17,8 @@
 
           $scope.setTime = function() {
             TimeSetter.show({
+              startHour: 13,
+              startMinute: 15,
               onSet: function(hour, minute) {
                 console.log(hour, minute);
                 $scope.time.hour(hour);

@@ -14,7 +14,7 @@ $ bower install ionic-time-setter --save
 2) Add the js to your html:
 
 ```html
-<script src="lib/ionic-monthpicker/dist/ionic-time-setter.min.js"></script>
+<script src="lib/ionic-time-setter/dist/ionic-time-setter.min.js"></script>
 ```
 
 3) Import in your controller:
